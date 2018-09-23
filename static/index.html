@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TFRecord Image Labeler</title>
+    <meta charset="UTF-8">
+    
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta property="og:title" content="TFRecord Image Labeler">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8080">
+    <meta property="og:image" content="/static/favicon/favicon-196x196.png">
+    <meta property="og:description" content="TFRecord Image Labeler: Label images to retrain Tensorflow Object Detection API">
+    <meta itemprop="name" content="TFRecord Image Labeler">
+    <meta itemprop="description" content="TFRecord Image Labeler: Label images to retrain Tensorflow Object Detection API">
+    <meta itemprop="image" content="/static/favicon/favicon-196x196.png">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="/static/favicon/favicon-152.png">
+    <link rel="shortcut icon" sizes="196x196" href="/static/favicon/favicon-196x196.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/static/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/static/favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/static/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/static/favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/static/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/static/favicon/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/static/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/static/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/static/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/static/favicon/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="TFRecord Image Labeler"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Caveat:700|Poppins:400,500,600,700" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet" />
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.3.6/fabric.min.js"></script>
+    <script src="/static/button.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="labeler" id="labeler">
+            <div class="labeler__sections">
+                <div id="input-section" class="section input section--input">
+                    <h2 class="section__title"><span>Input</span></h2>
+                    <div class="section__container">
+                        <div class="input__media">
+                            <div class="input__canvas">
+                                <canvas id="label" width="320" height="320"></canvas>
+                            </div>
+                        </div>
+                        <canvas id="button" width="320" height="80"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <a href="https://github.com/jasonmar/tfrecord-image-labeler" target="_blank" class="link">View Source</a>
+        </footer>
+    </div>
+</body>
+</html>
