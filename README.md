@@ -2,13 +2,20 @@
 
 ## Purpose
 
-This is a local web application and REST API which enables users to annotate images with bounding boxes. It provides an easy way to create an image dataset in TFRecord format used to retrain Tensorflow Object Detection API pre-trained models.
+TFRecord Image Labeler enables users to annotate images with bounding boxes and create an image dataset in TFRecord format used to retrain Tensorflow Object Detection API pre-trained models.
+
+## Screenshot
+
+![alt text](screenshot.png "TFRecord Image Labeler Screenshot")
 
 
 ## Design
 
+TFRecord Image Labeler is a local web application and REST API.
 It starts an HTTP server to present an HTML5 canvas for labeling images uploaded to a GCS bucket.
-Images are fetched from `/image` endpoint.
+Each time the button is pressed, an Image reference is fetched from `/image` endpoint.
+The Image is downloaded from the `/image/:imgId` endpoint, which maintains a read-through cache backed by the GCS bucket.
+The Image is automatically resized to fit the labeling canvas.
 Each for each label posted to the `/label` endpoint, a tf.Example is created and written to the output TFRecord.
 A TFRecord file is output to the local filesystem.
 
