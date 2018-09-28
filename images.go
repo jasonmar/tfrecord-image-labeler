@@ -82,8 +82,15 @@ func (it *ImageIterator) Next() *Image {
 
 // getImage reads a file from GCS
 func (it *ImageIterator) getImageGCS(imgID string) ([]byte, error) {
-	log.Printf("fetching gs://%s/%s", it.bucket, imgID)
-	r, err := it.client.Bucket(it.bucket).Object(imgID).NewReader(it.ctx)
+	var prefix string
+	if it.prefix != "" {
+		prefix = fmt.Sprintf("%s/%s", it.prefix, imgID)
+	} else {
+		prefix = imgID
+	}
+
+	log.Printf("fetching gs://%s/%s", it.bucket, prefix)
+	r, err := it.client.Bucket(it.bucket).Object(prefix).NewReader(it.ctx)
 	if err != nil {
 		return nil, err
 	}
